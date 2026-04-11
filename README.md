@@ -30,4 +30,4 @@ Cada seção do curso está organizada em uma branch separada. Clique nos links 
 
 | # | Sessão | Branch | Status |
 |:---:|---|---|:---:|
-| 01 | DataTypes and Variables | `s01-datatypes` | 🔜 |
+| 01 | DataTypes and Variables |  [`s01-datatypes`](https://github.com/lucaslap/LearningCsharp/tree/s01-datatypes) | 🔜 |
