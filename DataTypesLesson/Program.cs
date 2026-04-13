@@ -177,6 +177,174 @@ double  convertidoDouble = Convert.ToDouble(textoDouble, System.Globalization.Cu
 Console.WriteLine($"  Convert: \"{textoDouble}\" → {convertidoDouble}");
 
 // ============================================================
+//  9. OPERADORES ARITMÉTICOS
+// ============================================================
+Console.WriteLine("\n--- 9. Operadores Aritméticos ---");
+
+int a = 10, b = 3;
+
+Console.WriteLine($"  a = {a}, b = {b}");
+Console.WriteLine($"  a + b  = {a + b}");   // adição
+Console.WriteLine($"  a - b  = {a - b}");   // subtração
+Console.WriteLine($"  a * b  = {a * b}");   // multiplicação
+Console.WriteLine($"  a / b  = {a / b}");   // divisão inteira — trunca o decimal!
+Console.WriteLine($"  a % b  = {a % b}");   // módulo (resto da divisão): 10 % 3 = 1
+
+// Divisão com ponto flutuante preserva o decimal (F4 formata para 4 casas decimais)
+double divisaoReal = (double)a / b;
+Console.WriteLine($"  (double)a / b = {divisaoReal:F4}");
+
+// Módulo é útil para verificar par/ímpar
+Console.WriteLine($"\n  {a} é par? {a % 2 == 0}");
+Console.WriteLine($"  {b} é par? {b % 2 == 0}");
+
+// Incremento e decremento
+int contador = 5;
+Console.WriteLine($"\n  contador = {contador}");
+Console.WriteLine($"  contador++ (pós): usa {contador++}, depois vira {contador}"); // usa 5, vira 6
+Console.WriteLine($"  ++contador (pré): vira {++contador} antes de usar");          // vira 7 e usa 7
+Console.WriteLine($"  contador-- (pós): usa {contador--}, depois vira {contador}"); // usa 7, vira 6
+Console.WriteLine($"  --contador (pré): vira {--contador} antes de usar");          // vira 5 e usa 5
+
+// ============================================================
+//  10. OPERADORES DE COMPARAÇÃO
+// ============================================================
+Console.WriteLine("\n--- 10. Operadores de Comparação ---");
+
+int x = 7, y = 10;
+Console.WriteLine($"  x = {x}, y = {y}");
+Console.WriteLine($"  x == y  → {x == y}");  // igual
+Console.WriteLine($"  x != y  → {x != y}");  // diferente
+Console.WriteLine($"  x >  y  → {x > y}");   // maior que
+Console.WriteLine($"  x <  y  → {x < y}");   // menor que
+Console.WriteLine($"  x >= y  → {x >= y}");  // maior ou igual
+Console.WriteLine($"  x <= y  → {x <= y}");  // menor ou igual
+
+// Exemplo prático: verificar se um valor está em um intervalo
+int temperatura = 23;
+bool confortavel = temperatura >= 18 && temperatura <= 26;
+Console.WriteLine($"\n  Temperatura {temperatura}°C está confortável (18–26)? {confortavel}");
+
+// ============================================================
+//  11. OPERADORES LÓGICOS
+// ============================================================
+Console.WriteLine("\n--- 11. Operadores Lógicos ---");
+
+bool temCNH     = true;
+bool maiorIdade = true;
+bool sobriedade = false;
+
+// && (E): verdadeiro somente se AMBOS forem verdadeiros
+Console.WriteLine($"  temCNH && maiorIdade          → {temCNH && maiorIdade}");
+Console.WriteLine($"  temCNH && sobriedade           → {temCNH && sobriedade}");
+
+// || (OU): verdadeiro se PELO MENOS UM for verdadeiro
+Console.WriteLine($"  maiorIdade || sobriedade       → {maiorIdade || sobriedade}");
+Console.WriteLine($"  sobriedade || !temCNH          → {sobriedade || !temCNH}");
+
+// ! (NÃO): inverte o valor lógico
+Console.WriteLine($"  !temCNH                        → {!temCNH}");
+Console.WriteLine($"  !sobriedade                    → {!sobriedade}");
+
+// Combinação realista
+bool podeConduzir = temCNH && maiorIdade && !sobriedade;
+Console.WriteLine($"\n  Pode conduzir (CNH + idade + sóbrio)? {podeConduzir}");
+
+// Curto-circuito: C# para de avaliar assim que o resultado é certo
+// Em &&: se o primeiro for false, o segundo NÃO é avaliado
+// Em ||: se o primeiro for true,  o segundo NÃO é avaliado
+
+// ============================================================
+//  12. OPERADORES DE ATRIBUIÇÃO
+// ============================================================
+Console.WriteLine("\n--- 12. Operadores de Atribuição ---");
+
+int pontos = 100;
+Console.WriteLine($"  pontos = {pontos}");
+
+pontos += 20;  // equivale a: pontos = pontos + 20
+Console.WriteLine($"  pontos += 20  → {pontos}");
+
+pontos -= 15;  // equivale a: pontos = pontos - 15
+Console.WriteLine($"  pontos -= 15  → {pontos}");
+
+pontos *= 2;   // equivale a: pontos = pontos * 2
+Console.WriteLine($"  pontos *= 2   → {pontos}");
+
+pontos /= 3;   // equivale a: pontos = pontos / 3
+Console.WriteLine($"  pontos /= 3   → {pontos}");
+
+pontos %= 7;   // equivale a: pontos = pontos % 7
+Console.WriteLine($"  pontos %= 7   → {pontos}");
+
+// ??= — atribui somente se o valor for null (null-coalescing assignment)
+string? apelido = null;
+apelido ??= "Sem apelido"; // atribui porque é null
+Console.WriteLine($"\n  apelido ??= \"Sem apelido\" → \"{apelido}\"");
+
+apelido ??= "Outro valor"; // NÃO atribui porque já tem valor
+Console.WriteLine($"  apelido ??= \"Outro valor\"  → \"{apelido}\" (não mudou)");
+
+// ============================================================
+//  13. OPERADOR TERNÁRIO
+// ============================================================
+Console.WriteLine("\n--- 13. Operador Ternário ---");
+
+// Sintaxe: condição ? valorSeVerdadeiro : valorSeFalso
+// Substitui um if/else simples em uma única linha
+
+int idade = 20;
+string acesso = idade >= 18 ? "Permitido" : "Negado";
+Console.WriteLine($"  idade = {idade} → acesso: {acesso}");
+
+double saldo = -50.0;
+string situacao = saldo >= 0 ? "Positivo" : "Negativo";
+Console.WriteLine($"  saldo = {saldo} → situação: {situacao}");
+
+// Ternários podem ser encadeados, mas prejudicam a legibilidade
+int nota = 75;
+string conceito = nota >= 90 ? "A" : nota >= 70 ? "B" : nota >= 50 ? "C" : "F";
+Console.WriteLine($"  nota = {nota} → conceito: {conceito}");
+
+// ============================================================
+//  14. ORDEM DE AVALIAÇÃO (PRECEDÊNCIA DE OPERADORES)
+// ============================================================
+Console.WriteLine("\n--- 14. Ordem de Avaliação (Precedência) ---");
+
+// Precedência (do mais alto ao mais baixo):
+//  1. ()                        ← parênteses — força a ordem
+//  2. ++ -- (pós-fixo), !       ← unários
+//  3. * / %                     ← multiplicativos
+//  4. + -                       ← aditivos
+//  5. < > <= >=                 ← relacionais
+//  6. == !=                     ← igualdade
+//  7. &&                        ← E lógico
+//  8. ||                        ← OU lógico
+//  9. ??                        ← null-coalescing
+// 10. ?:                        ← ternário
+// 11. = += -= *= /= %= ??=      ← atribuição (da direita para a esquerda)
+
+// Exemplo clássico de pegadinha:
+int semParenteses  = 2 + 3 * 4;   // 3*4=12, depois 2+12 = 14  (NÃO 20!)
+int comParenteses  = (2 + 3) * 4; // 2+3=5,  depois 5*4  = 20
+Console.WriteLine($"  2 + 3 * 4   = {semParenteses}  ← * tem precedência sobre +");
+Console.WriteLine($"  (2 + 3) * 4 = {comParenteses}  ← () forçam a soma primeiro");
+
+// Combinação de lógicos e comparações
+int v = 5;
+bool r1 = v > 3 && v < 10;  // (v>3) && (v<10) → true && true  → true
+bool r2 = v > 3 || v > 10;  // (v>3) || (v>10) → true || false → true
+bool r3 = v > 3 && v > 10;  // (v>3) && (v>10) → true && false → false
+Console.WriteLine($"\n  v = {v}");
+Console.WriteLine($"  v > 3 && v < 10  → {r1}");
+Console.WriteLine($"  v > 3 || v > 10  → {r2}");
+Console.WriteLine($"  v > 3 && v > 10  → {r3}");
+
+// Associatividade da esquerda para a direita nos aditivos
+int assoc = 10 - 3 - 2; // (10-3)-2 = 7-2 = 5  (NÃO 10-(3-2) = 9)
+Console.WriteLine($"\n  10 - 3 - 2 = {assoc}  ← subtração associa da esquerda para a direita");
+
+// ============================================================
 //  RESUMO
 // ============================================================
 Console.WriteLine("\n=== RESUMO ===");
@@ -187,6 +355,12 @@ Console.WriteLine("  Lógico:     bool (true / false)");
 Console.WriteLine("  Implícito:  var");
 Console.WriteLine("  Anulável:   tipo? (ex: int?)");
 Console.WriteLine("  Imutável:   const");
+Console.WriteLine("  Aritméticos:  + - * / % ++ --");
+Console.WriteLine("  Comparação:   == != > < >= <=");
+Console.WriteLine("  Lógicos:      && || !");
+Console.WriteLine("  Atribuição:   = += -= *= /= %= ??=");
+Console.WriteLine("  Ternário:     condição ? a : b");
+Console.WriteLine("  Precedência:  * / antes de + -  →  use () para forçar a ordem");
 Console.WriteLine("\nDica de ouro:");
 Console.WriteLine("  • int     → inteiros do dia a dia");
 Console.WriteLine("  • double  → decimais gerais");
