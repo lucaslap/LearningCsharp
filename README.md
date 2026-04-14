@@ -12,7 +12,7 @@ O curso ensina C# do zero ao avançado, com temas como programação orientada a
 
 ## Tecnologias Utilizadas
 
-- **Linguagem:** C# (.NET 8.0)
+- **Linguagem:** C# (.NET 10.0)
 - **IDE:** Visual Studio 2022
 - **Plataforma:** Windows 11
 
@@ -30,4 +30,5 @@ Cada seção do curso está organizada em uma branch separada. Clique nos links 
 
 | # | Sessão | Branch | Status |
 |:---:|---|---|:---:|
-| 01 | DataTypes and Variables |  [`s01-datatypes`](https://github.com/lucaslap/LearningCsharp/tree/s01-datatypes) | 🔜 |
+| 01 | DataTypes and Variables |  [`s01-datatypes`](https://github.com/lucaslap/LearningCsharp/tree/s01-datatypes) | ✅ |
+| 02 | Making Decisions | [`s02-makingDecisions`](https://github.com/lucaslap/LearningCsharp/tree/s02-makingDecisions) | ✅ |
