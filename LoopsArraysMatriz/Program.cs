@@ -7,7 +7,7 @@
 //    • ExemplosArrays.cs   → arrays unidimensionais e métodos úteis
 //    • ExemplosMatrizes.cs → matrizes 2D retangulares e jagged arrays
 //
-//  Execute com:  dotnet run --project Loops
+//  Execute com:  dotnet run --project LoopsArraysMatriz
 //
 // ============================================================
 
