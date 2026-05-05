@@ -32,12 +32,12 @@
 //  ┌─────────────────────────────────────────────────────────┐
 //  │  static                                                 │
 //  │  Sem static → o método pertence ao OBJETO (instância).  │
-//  │              Precisa criar um objeto para chamar.        │
-//  │              Tem acesso aos campos do objeto (this).     │
+//  │              Precisa criar um objeto para chamar.       │
+//  │              Tem acesso aos campos do objeto (this).    │
 //  │                                                         │
 //  │  Com static → o método pertence à CLASSE.               │
-//  │              Pode chamar sem criar nenhum objeto.        │
-//  │              NÃO tem acesso a campos de instância.       │
+//  │              Pode chamar sem criar nenhum objeto.       │
+//  │              NÃO tem acesso a campos de instância.      │
 //  └─────────────────────────────────────────────────────────┘
 //
 //  ┌─────────────────────────────────────────────────────────┐
