@@ -122,7 +122,76 @@ class Program
         Console.WriteLine($"Chaves:  [{string.Join(", ", estoque.Keys)}]");
         Console.WriteLine($"Valores: [{string.Join(", ", estoque.Values)}]");
 
-        // Caso de uso clássico: contador de frequência
+        // --- 2a. Valor como objeto ---
+        // O valor pode ser qualquer tipo, inclusive classes customizadas.
+        var agenda = new Dictionary<string, Contato>
+        {
+            ["Lucas"] = new Contato("Lucas",  "(11) 9000-0001", "lucas@email.com"),
+            ["Maria"] = new Contato("Maria",  "(21) 9000-0002", "maria@email.com"),
+            ["João"]  = new Contato("João",   "(31) 9000-0003", "joao@email.com")
+        };
+
+        if (agenda.TryGetValue("Maria", out Contato? c))
+            Console.WriteLine($"Encontrado: {c.Nome} — {c.Telefone}");
+
+        // Atualizar um campo do objeto (valor é referência, então funciona direto)
+        agenda["Lucas"].Telefone = "(11) 9999-9999";
+        Console.WriteLine($"Lucas atualizado: {agenda["Lucas"].Telefone}");
+
+        // --- 2b. Dicionário com List como valor — agrupar elementos ---
+        // Padrão muito comum: cada chave mapeia para UMA LISTA de valores.
+        // Ex: categoria → lista de produtos naquela categoria.
+        var categorias = new Dictionary<string, List<string>>();
+
+        void AdicionarProduto(string categoria, string produto)
+        {
+            // Se a chave não existe ainda, cria a lista antes de adicionar.
+            if (!categorias.ContainsKey(categoria))
+                categorias[categoria] = new List<string>();
+            categorias[categoria].Add(produto);
+        }
+
+        AdicionarProduto("Frutas",   "Maçã");
+        AdicionarProduto("Frutas",   "Banana");
+        AdicionarProduto("Verduras", "Alface");
+        AdicionarProduto("Frutas",   "Uva");
+        AdicionarProduto("Verduras", "Cenoura");
+
+        Console.WriteLine("Produtos por categoria:");
+        foreach (var (cat, produtos) in categorias)
+            Console.WriteLine($"  {cat}: [{string.Join(", ", produtos)}]");
+
+        // --- 2c. Converter List para Dictionary com LINQ ---
+        // ToDictionary(keySelector, valueSelector) transforma qualquer coleção.
+        var contatos = new List<Contato>
+        {
+            new("Ana",   "(41) 1111-1111", "ana@email.com"),
+            new("Bruno", "(51) 2222-2222", "bruno@email.com"),
+            new("Carla", "(61) 3333-3333", "carla@email.com"),
+        };
+
+        // Chave = nome, valor = objeto inteiro
+        Dictionary<string, Contato> contatosPorNome =
+            contatos.ToDictionary(c => c.Nome);
+
+        // Chave = nome, valor = só o telefone
+        Dictionary<string, string> telefonePorNome =
+            contatos.ToDictionary(c => c.Nome, c => c.Telefone);
+
+        Console.WriteLine($"Telefone da Ana (via ToDictionary): {telefonePorNome["Ana"]}");
+
+        // --- 2d. Mesclar dois dicionários ---
+        var dict1 = new Dictionary<string, int> { ["a"] = 1, ["b"] = 2 };
+        var dict2 = new Dictionary<string, int> { ["b"] = 99, ["c"] = 3 }; // "b" conflita
+
+        // Mescla: dict2 sobrescreve chaves de dict1 em caso de conflito
+        var mesclado = new Dictionary<string, int>(dict1);
+        foreach (var (chave, valor) in dict2)
+            mesclado[chave] = valor;  // [chave] sobrescreve, Add lançaria exceção
+
+        Console.WriteLine($"Mesclado: [{string.Join(", ", mesclado.Select(p => $"{p.Key}={p.Value}"))}]");
+
+        // --- 2e. Contador de frequência (padrão clássico) ---
         string texto = "banana abacaxi banana laranja abacaxi banana";
         var frequencia = new Dictionary<string, int>();
         foreach (var palavra in texto.Split(' '))
@@ -133,6 +202,15 @@ class Program
         Console.WriteLine("Frequência de palavras:");
         foreach (var (palavra, count) in frequencia.OrderByDescending(p => p.Value))
             Console.WriteLine($"  {palavra}: {count}x");
+
+        // --- 2f. Dicionário como cache simples (memoização) ---
+        // Evita recalcular resultados pesados: na primeira chamada computa e guarda;
+        // nas seguintes retorna o valor já calculado em O(1).
+        var cache = new Dictionary<int, long>();
+        Console.WriteLine("Fibonacci com cache:");
+        for (int i = 0; i <= 10; i++)
+            Console.Write($"F({i})={FibCache(i, cache)}  ");
+        Console.WriteLine();
 
         // ============================================================
         //  3. HashSet<T> — elementos únicos + operações de conjuntos
@@ -309,5 +387,30 @@ class Program
         Console.WriteLine("  quando o código chamador não precisa saber a implementação concreta.");
 
         Console.ReadKey();
+    }
+
+    // Fibonacci com memoização: cache evita recomputar subproblemas já resolvidos.
+    // Sem cache, Fibonacci recursivo é O(2^n); com cache é O(n).
+    static long FibCache(int n, Dictionary<int, long> cache)
+    {
+        if (n <= 1) return n;
+        if (cache.TryGetValue(n, out long resultado)) return resultado; // já calculado
+        cache[n] = FibCache(n - 1, cache) + FibCache(n - 2, cache);
+        return cache[n];
+    }
+}
+
+// Classe auxiliar usada como valor no Dictionary (seção 2a e 2c)
+class Contato
+{
+    public string Nome     { get; }
+    public string Telefone { get; set; }
+    public string Email    { get; }
+
+    public Contato(string nome, string telefone, string email)
+    {
+        Nome     = nome;
+        Telefone = telefone;
+        Email    = email;
     }
 }
