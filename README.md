@@ -20,15 +20,19 @@ O curso ensina C# do zero ao avançado, com temas como programação orientada a
 
 ## Como Navegar
 
-Cada seção do curso está organizada em uma branch separada. Clique nos links da tabela abaixo para acessar os projetos e anotações de cada sessão.
+Cada seção do curso está em uma pasta `sNN-NomeDaSeção` na branch `main`. Clique nos links da tabela abaixo para acessar os projetos e anotações de cada sessão.
 
-> As branches marcadas com ✅ já estão disponíveis. As marcadas com 🔜 serão adicionadas conforme o progresso no curso.
+> As seções marcadas com ✅ já estão disponíveis. As marcadas com 🔜 serão adicionadas conforme o progresso no curso.
 
 ---
 
 ## Tabela de Conteúdos
 
-| # | Sessão | Branch | Status |
+| # | Sessão | Pasta | Status |
 |:---:|---|---|:---:|
-| 01 | DataTypes and Variables |  [`s01-datatypes`](https://github.com/lucaslap/LearningCsharp/tree/s01-datatypes) | ✅ |
-| 02 | Making Decisions | [`s02-makingDecisions`](https://github.com/lucaslap/LearningCsharp/tree/s02-makingDecisions) | ✅ |
+| 01 | DataTypes and Variables | [`s01-DataTypesLesson`](https://github.com/lucaslap/LearningCsharp/tree/main/s01-DataTypesLesson) | ✅ |
+| 02 | Making Decisions | [`s02-MakingDecisions`](https://github.com/lucaslap/LearningCsharp/tree/main/s02-MakingDecisions) | ✅ |
+| 03 | Loops, Arrays e Matrizes | [`s03-LoopsArraysMatriz`](https://github.com/lucaslap/LearningCsharp/tree/main/s03-LoopsArraysMatriz) | ✅ |
+| 04 | Functions and Methods | [`s04-FunctionsAndMethods`](https://github.com/lucaslap/LearningCsharp/tree/main/s04-FunctionsAndMethods) | ✅ |
+| 05 | Object Oriented Programming | [`s05-ObjectOrientedProgramming`](https://github.com/lucaslap/LearningCsharp/tree/main/s05-ObjectOrientedProgramming) | ✅ |
+| 06 | Collections | [`s06-Collections`](https://github.com/lucaslap/LearningCsharp/tree/main/s06-Collections) | ✅ |
