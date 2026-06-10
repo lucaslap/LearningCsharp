@@ -37,3 +37,7 @@ Cada seção do curso está em uma pasta `sNN-NomeDaSeção` na branch `main`. C
 | 05 | Object Oriented Programming | [`s05-ObjectOrientedProgramming`](https://github.com/lucaslap/LearningCsharp/tree/main/s05-ObjectOrientedProgramming) | ✅ |
 | 06 | Collections | [`s06-Collections`](https://github.com/lucaslap/LearningCsharp/tree/main/s06-Collections) | ✅ |
 | 07 | Error Handling | [`s07-ErrorHandling`](https://github.com/lucaslap/LearningCsharp/tree/main/s07-ErrorHandling) | ✅ |
+| 08 | Polymorphism | [`s08-Polymorphism`](https://github.com/lucaslap/LearningCsharp/tree/main/s08-Polymorphism) | ✅ |
+| 09 | Structs, Enums e DateTime | [`s09-Structs`](https://github.com/lucaslap/LearningCsharp/tree/main/s09-Structs) | ✅ |
+| 10 | Inheritance | [`s10-Inheritance`](https://github.com/lucaslap/LearningCsharp/tree/main/s10-Inheritance) | ✅ |
+| 11 | Delegates and Events | [`s11-DelegatesAndEvents`](https://github.com/lucaslap/LearningCsharp/tree/main/s11-DelegatesAndEvents) | ✅ |
