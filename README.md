@@ -37,3 +37,14 @@ Cada seção do curso está em uma pasta `sNN-NomeDaSeção` na branch `main`. C
 | 05 | Object Oriented Programming | [`s05-ObjectOrientedProgramming`](https://github.com/lucaslap/LearningCsharp/tree/main/s05-ObjectOrientedProgramming) | ✅ |
 | 06 | Collections | [`s06-Collections`](https://github.com/lucaslap/LearningCsharp/tree/main/s06-Collections) | ✅ |
 | 07 | Error Handling | [`s07-ErrorHandling`](https://github.com/lucaslap/LearningCsharp/tree/main/s07-ErrorHandling) | ✅ |
+| 08 | Polymorphism | [`s08-Polymorphism`](https://github.com/lucaslap/LearningCsharp/tree/main/s08-Polymorphism) | ✅ |
+| 09 | Structs, Enums e DateTime | [`s09-Structs`](https://github.com/lucaslap/LearningCsharp/tree/main/s09-Structs) | ✅ |
+| 10 | Inheritance | [`s10-Inheritance`](https://github.com/lucaslap/LearningCsharp/tree/main/s10-Inheritance) | ✅ |
+| 11 | Delegates and Events | [`s11-DelegatesAndEvents`](https://github.com/lucaslap/LearningCsharp/tree/main/s11-DelegatesAndEvents) | ✅ |
+| 12 | Regex | [`s12-Regex`](https://github.com/lucaslap/LearningCsharp/tree/main/s12-Regex) | ✅ |
+| 13 | Using Database (SQL Server + ADO.NET) | [`s13-Database`](https://github.com/lucaslap/LearningCsharp/tree/main/s13-Database) | ✅ |
+| 14 | LINQ | [`s14-Linq`](https://github.com/lucaslap/LearningCsharp/tree/main/s14-Linq) | ✅ |
+| 15 | Clean Code | [`s15-CleanCode`](https://github.com/lucaslap/LearningCsharp/tree/main/s15-CleanCode) | ✅ |
+| 16 | Generics | [`s16-Generics`](https://github.com/lucaslap/LearningCsharp/tree/main/s16-Generics) | ✅ |
+| 17 | Threads | [`s17-Threads`](https://github.com/lucaslap/LearningCsharp/tree/main/s17-Threads) | ✅ |
+| 18 | TDD (Test-Driven Development) | [`s18-TDD`](https://github.com/lucaslap/LearningCsharp/tree/main/s18-TDD) | ✅ |
