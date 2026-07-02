@@ -36,3 +36,4 @@ Cada seção do curso está em uma pasta `sNN-NomeDaSeção` na branch `main`. C
 | 04 | Functions and Methods | [`s04-FunctionsAndMethods`](https://github.com/lucaslap/LearningCsharp/tree/main/s04-FunctionsAndMethods) | ✅ |
 | 05 | Object Oriented Programming | [`s05-ObjectOrientedProgramming`](https://github.com/lucaslap/LearningCsharp/tree/main/s05-ObjectOrientedProgramming) | ✅ |
 | 06 | Collections | [`s06-Collections`](https://github.com/lucaslap/LearningCsharp/tree/main/s06-Collections) | ✅ |
+| 07 | Error Handling | [`s07-ErrorHandling`](https://github.com/lucaslap/LearningCsharp/tree/main/s07-ErrorHandling) | ✅ |
